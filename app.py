@@ -6,7 +6,7 @@ st.set_page_config(page_title="ABA J.D. Dashboard", layout="wide")
 
 @st.cache_data
 def load_data():
-    df = pd.read_excel("ABA_Online_JD_Programs_2025_Styled.xlsx", sheet_name="JD_Programs_2026")
+    df = pd.read_excel("ABA_Online_JD_Programs_2026_Styled.xlsx", sheet_name="JD_Programs_2026")
     df["BarPassNum"] = df["Bar Passage Rate"].str.replace("%", "").astype(float)
     df["LSAT"] = df["Median LSAT"]
     df["Tuition"] = df["Tuition FT (USD)"]
