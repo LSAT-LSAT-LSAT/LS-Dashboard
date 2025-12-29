@@ -1,4 +1,4 @@
-# ⚖️ ABA J.D. Program Dashboard
+# ⚖️ ABA J.D. Program Dashboard BY PIPELINE DEVELOPER RESEARCH LAB
 
 An interactive Streamlit dashboard for exploring ABA-accredited online and hybrid J.D. programs, focusing on:
 
