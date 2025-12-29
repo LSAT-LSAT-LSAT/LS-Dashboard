@@ -6,7 +6,7 @@ st.set_page_config(page_title="ABA J.D. Dashboard", layout="wide")
 
 @st.cache_data
 def load_data():
-    df = pd.read_excel("ABA_Online_JD_Programs_2025_Styled.xlsx", sheet_name="JD_Programs_2025")
+    df = pd.read_excel("ABA_Online_JD_Programs_2025_Styled.xlsx", sheet_name="JD_Programs_2026")
     df["BarPassNum"] = df["Bar Passage Rate"].str.replace("%", "").astype(float)
     df["LSAT"] = df["Median LSAT"]
     df["Tuition"] = df["Tuition FT (USD)"]
@@ -14,7 +14,27 @@ def load_data():
 
 df = load_data()
 
-st.title("⚖️ ABA-Approved Online & Hybrid J.D. Program Dashboard")
+import streamlit as st
+
+st.set_page_config(page_title="PIPELINE DEVELOPER RESEARCH LAB", layout="wide")
+
+# Optional: logo at the top
+st.image("logo.png", width=220)  # if you have a logo file
+
+st.title("PIPELINE DEVELOPER RESEARCH LAB")
+st.subheader("Applied Research, Analytics, and AI-Powered Decision Tools")
+
+st.write(
+    """
+    PIPELINE DEVELOPER RESEARCH LAB provides applied research, market and policy analysis,
+    and custom AI dashboards for small businesses, nonprofits, and institutions.
+    We design and deploy interactive tools like this ABA J.D. dashboard to support
+    data-driven decisions.
+    """
+)
+
+st.write("📩 To discuss a research project or tool, email: hello@pipelinedeveloperlab.com")
+
 
 # Filters
 with st.sidebar:
