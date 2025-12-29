@@ -5,14 +5,22 @@ import plotly.express as px
 
 
 @st.cache_data
+
+
+SHEET_ID = "1FoTiT7dv60_Lj9xWMWYAINNJvswV1HsX"
+XLSX_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=xlsx"
+
+@st.cache_data
 def load_data():
-    df = pd.read_excel("ABA_Online_JD_Programs_2026_Styled.xlsx", sheet_name="JD_Programs_2026")
-    df["BarPassNum"] = df["Bar Passage Rate"].str.replace("%", "").astype(float)
-    df["LSAT"] = df["Median LSAT"]
-    df["Tuition"] = df["Tuition FT (USD)"]
+    df = pd.read_excel(XLSX_URL, sheet_name="JD_Programs_2026", engine="openpyxl")
+    df["BarPassNum"] = df["Bar Passage Rate"].astype(str).str.replace("%", "").astype(float)
+    df["LSAT"] = pd.to_numeric(df["Median LSAT"], errors="coerce")
+    df["Tuition"] = pd.to_numeric(df["Tuition FT (USD)"], errors="coerce")
     return df
 
 df = load_data()
+
+
 
 import streamlit as st
 
