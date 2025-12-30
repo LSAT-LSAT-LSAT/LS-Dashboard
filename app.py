@@ -47,7 +47,7 @@ st.write(
     """
 )
 
-st.write("📩 To discuss a research project or tool, email: hello@pipelinedeveloperlab.com")
+st.write("📩 To discuss a research project or tool, email: research@pipelinedeveloperlab.com")
 
 
 # Filters
